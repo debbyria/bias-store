@@ -1,7 +1,7 @@
 # P3-Challenge-1
 
 - Tema Aplikasi: Movie
-- CSS Framework: Tailwind
+- CSS Framework: ....
 
 Struktur Folder:
 
