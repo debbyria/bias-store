@@ -1,0 +1,258 @@
+{
+  "User": [
+    {
+      "id": 1,
+      "username": "debby",
+      "email": "debby@mail.com",
+      "password": "debby",
+      "role": "admin",
+      "phoneNumber": "87656789875",
+      "address": "Sunter"
+    }
+  ],
+  "Movies": [
+    {
+      "id": 1,
+      "title": "Train to Busan",
+      "slug": "train-to-busan",
+      "synopsis": "Seok-Woo (Gong Yoo) is a fund manager in Seoul. He is separated from his wife and lives with his daughter Soo-An (Kim Soo-Ahn). Seok-Woo doesn't spend much time with his daughter or show affection to her. On the night before Soo-An's birthday, Soo-An insists on seeing her mother for her birthday. Seok-Woo has no other choice, but to take her to Busan. Early the next morning, they board the KTX train for Busan at Seoul Station.\n Before the KTX train leaves Seoul Station, a zombie like girl jumps onto the train. The girl is infected with a horrific virus that is spreading like wildfire. Seok-Woo, Soo-An and the other passengers on the KTX train must now fight for their lives.",
+      "trailerUrl": "https://www.youtube.com/watch?v=pyWuHv2-Abk",
+      "imgUrl": "https://asianwiki.com/images/5/5a/Train_To_Busan-p1.jpg",
+      "rating": 7.6,
+      "genreId": 3,
+      "authorId": 1,
+      "casts": [
+        {
+          "id": 1,
+          "movieId": 1,
+          "name": "Gong Yoo",
+          "profilePict": "https://i.pinimg.com/564x/e3/1e/d6/e31ed627fee9e2298a20750bab7ffa39.jpg"
+        },
+        {
+          "id": 2,
+          "movieId": 1,
+          "name": "Jung Yumi",
+          "profilePict": "https://i.pinimg.com/564x/ee/69/f4/ee69f40cc3bdfd88f0b2aac45b50530d.jpg"
+        },
+        {
+          "id": 3,
+          "movieId": 1,
+          "name": "Ma Dong Seok",
+          "profilePict": "https://i.pinimg.com/474x/26/55/1a/26551a71928f8931e55f5be75e43dad9.jpg"
+        },
+        {
+          "id": 4,
+          "movieId": 1,
+          "name": "Choi Woo Shik",
+          "profilePict": "https://i.pinimg.com/474x/af/a8/70/afa870fe9b0a1b2b1300e38459a95e7b.jpg"
+        },
+        {
+          "id": 5,
+          "movieId": 1,
+          "name": "Sohee",
+          "profilePict": "https://i.pinimg.com/474x/73/9e/a6/739ea6ca9d84bc284148ab7576011952.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Parasite",
+      "slug": "parasite",
+      "synopsis": "Ki-Taek (Song Kang-Ho) is poor and unemployed. He lives with his wife Choong-Sook (Jang Hye-Jin), son Ki-Woo (Choi Woo-Sik) and daughter Ki-Jung (Park So-Dam) in a damp, insect infested semi-basement apartment in a low income area of Seoul. When Ki-Woo takes his friend (Park Seo-Joon) to a nearby convenient store for drinks, he learns that his friend (who is going to study abroad) is leaving behind a good paying private tutoring job. His friend wants Ki-Woo to takeover the tutoring job while he is abroad. Soon, Ki-Woo enters the life of the wealthy Park family, with Ki-Woo's own family lurking in the periphery.",
+      "trailerUrl": "https://www.youtube.com/watch?v=isOGD_7hNIY",
+      "imgUrl": "https://asianwiki.com/images/b/b2/Parasite-2019-p01.jpg",
+      "rating": 8.5,
+      "genreId": 4,
+      "authorId": 1,
+      "casts": [
+        {
+          "id": 6,
+          "movieId": 2,
+          "name": "Kang Ho Song",
+          "profilePict": "https://www.mainmain.id/uploads/post/2020/03/08/song.jpg"
+        },
+        {
+          "id": 7,
+          "movieId": 2,
+          "name": "Lee Sun Kyun",
+          "profilePict": "https://i.pinimg.com/474x/63/80/fe/6380fe1db4c5c8ab31fa8e93480f8fca.jpg"
+        },
+        {
+          "id": 8,
+          "movieId": 2,
+          "name": "Cho Yeo Jeong",
+          "profilePict": "https://i.pinimg.com/474x/6d/22/3d/6d223d36438ec55de068ab40d0bea62f.jpg"
+        },
+        {
+          "id": 9,
+          "movieId": 2,
+          "name": "Park So Dam",
+          "profilePict": "https://i.pinimg.com/474x/07/e4/eb/07e4ebe48d6c686eac5e022b41dcd124.jpg"
+        },
+        {
+          "id": 10,
+          "movieId": 2,
+          "name": "Lee Jeong Un",
+          "profilePict": "https://img.hani.co.kr/imgdb/resize/2019/0612/00502282_20190612.JPG"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Miracle in Cell No.7",
+      "slug": "miracle-in-cell-no-7",
+      "synopsis": "A father (Ryoo Seung-Ryong), who is mentally handicapped, but loves his daughter very much, is falsely accused of a crime and sent to prison. Later, his daughter Ye-Seung (Park Shin-Hye, who is a law school student, works to prove his innocence. \n Back in 1997, Yong-Goo lives happily with his daughter Ye-Seung (Kal So-Won), even though he has the intelligence of a child. They stop by a shop everyday to look at a yellow Sailor Moon backpack that he hopes to buy his daughter. One day, they notice that the last yellow Sailor Moon backpack is being sold. Yong-Goo goes inside the store to plead his case, but the father buying the backpack ends up slapping Yong-Goo.",
+      "trailerUrl": "https://www.youtube.com/watch?v=h9MGZFy-gog",
+      "imgUrl": "https://asianwiki.com/images/1/15/Miracle_in_Cell_No.7-p4.jpg",
+      "rating": 8.2,
+      "genreId": 5,
+      "authorId": 1,
+      "casts": [
+        {
+          "id": 11,
+          "movieId": 3,
+          "name": "Ryu Seung Ryong",
+          "profilePict": "https://static.wikia.nocookie.net/kaminokuni/images/d/dd/Ryu_Seung-ryong.jpg/revision/latest?cb=20200324200900"
+        },
+        {
+          "id": 12,
+          "movieId": 3,
+          "name": "Kal So Won",
+          "profilePict": "https://images.mubicdn.net/images/cast_member/416985/cache-541326-1588750713/image-w856.jpg?size=800x"
+        },
+        {
+          "id": 13,
+          "movieId": 3,
+          "name": "Park Shin Hye",
+          "profilePict": "https://i.pinimg.com/736x/f1/81/20/f18120d150bf6d81a05d8317d6d0dd44.jpg"
+        },
+        {
+          "id": 14,
+          "movieId": 3,
+          "name": "Oh Dal Su",
+          "profilePict": "https://upload.wikimedia.org/wikipedia/commons/1/14/%EC%A0%9C19%ED%9A%8C_%EB%B6%80%EC%B2%9C%EA%B5%AD%EC%A0%9C%ED%8C%90%ED%83%80%EC%8A%A4%ED%8B%B1%EC%98%81%ED%99%94%EC%A0%9C_%EA%B0%9C%EB%A7%89%EC%8B%9D_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_part.1_11.jpg"
+        },
+        {
+          "id": 15,
+          "movieId": 3,
+          "name": "Jeong Man Sik",
+          "profilePict": "https://photos.hancinema.net/photos/fullsizephoto1230069.jpg"
+        }
+      ]
+    }
+  ],
+  "Genres": [
+    {
+      "id": 1,
+      "name": "Romantic"
+    },
+    {
+      "id": 2,
+      "name": "Comedies"
+    },
+    {
+      "id": 3,
+      "name": "Action"
+    },
+    {
+      "id": 4,
+      "name": "Thriller"
+    },
+    {
+      "id": 5,
+      "name": "Drama"
+    }
+  ],
+  "Casts": [
+    {
+      "id": 1,
+      "movieId": 1,
+      "name": "Gong Yoo",
+      "profilePict": "https://i.pinimg.com/564x/e3/1e/d6/e31ed627fee9e2298a20750bab7ffa39.jpg"
+    },
+    {
+      "id": 2,
+      "movieId": 1,
+      "name": "Jung Yumi",
+      "profilePict": "https://i.pinimg.com/564x/ee/69/f4/ee69f40cc3bdfd88f0b2aac45b50530d.jpg"
+    },
+    {
+      "id": 3,
+      "movieId": 1,
+      "name": "Ma Dong Seok",
+      "profilePict": "https://i.pinimg.com/474x/26/55/1a/26551a71928f8931e55f5be75e43dad9.jpg"
+    },
+    {
+      "id": 4,
+      "movieId": 1,
+      "name": "Choi Woo Shik",
+      "profilePict": "https://i.pinimg.com/474x/af/a8/70/afa870fe9b0a1b2b1300e38459a95e7b.jpg"
+    },
+    {
+      "id": 5,
+      "movieId": 1,
+      "name": "Sohee",
+      "profilePict": "https://i.pinimg.com/474x/73/9e/a6/739ea6ca9d84bc284148ab7576011952.jpg"
+    },
+    {
+      "id": 6,
+      "movieId": 2,
+      "name": "Kang Ho Song",
+      "profilePict": "https://www.mainmain.id/uploads/post/2020/03/08/song.jpg"
+    },
+    {
+      "id": 7,
+      "movieId": 2,
+      "name": "Lee Sun Kyun",
+      "profilePict": "https://i.pinimg.com/474x/63/80/fe/6380fe1db4c5c8ab31fa8e93480f8fca.jpg"
+    },
+    {
+      "id": 8,
+      "movieId": 2,
+      "name": "Cho Yeo Jeong",
+      "profilePict": "https://i.pinimg.com/474x/6d/22/3d/6d223d36438ec55de068ab40d0bea62f.jpg"
+    },
+    {
+      "id": 9,
+      "movieId": 2,
+      "name": "Park So Dam",
+      "profilePict": "https://i.pinimg.com/474x/07/e4/eb/07e4ebe48d6c686eac5e022b41dcd124.jpg"
+    },
+    {
+      "id": 10,
+      "movieId": 2,
+      "name": "Lee Jeong Un",
+      "profilePict": "https://img.hani.co.kr/imgdb/resize/2019/0612/00502282_20190612.JPG"
+    },
+    {
+      "id": 11,
+      "movieId": 3,
+      "name": "Ryu Seung Ryong",
+      "profilePict": "https://static.wikia.nocookie.net/kaminokuni/images/d/dd/Ryu_Seung-ryong.jpg/revision/latest?cb=20200324200900"
+    },
+    {
+      "id": 12,
+      "movieId": 3,
+      "name": "Kal So Won",
+      "profilePict": "https://images.mubicdn.net/images/cast_member/416985/cache-541326-1588750713/image-w856.jpg?size=800x"
+    },
+    {
+      "id": 13,
+      "movieId": 3,
+      "name": "Park Shin Hye",
+      "profilePict": "https://i.pinimg.com/736x/f1/81/20/f18120d150bf6d81a05d8317d6d0dd44.jpg"
+    },
+    {
+      "id": 14,
+      "movieId": 3,
+      "name": "Oh Dal Su",
+      "profilePict": "https://upload.wikimedia.org/wikipedia/commons/1/14/%EC%A0%9C19%ED%9A%8C_%EB%B6%80%EC%B2%9C%EA%B5%AD%EC%A0%9C%ED%8C%90%ED%83%80%EC%8A%A4%ED%8B%B1%EC%98%81%ED%99%94%EC%A0%9C_%EA%B0%9C%EB%A7%89%EC%8B%9D_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_part.1_11.jpg"
+    },
+    {
+      "id": 15,
+      "movieId": 3,
+      "name": "Jeong Man Sik",
+      "profilePict": "https://photos.hancinema.net/photos/fullsizephoto1230069.jpg"
+    }
+  ]
+}
