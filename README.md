@@ -13,7 +13,7 @@ Struktur Folder:
 
 Target:
 
-- [ ] Lecture - React Intro
+- [x] Lecture - React Intro
 - [ ] React: Class Component vs Function Component
 - [ ] Mempelajari State menggunakan useState
 - [ ] Mengirim Props baik berupa sebuah state atau function
@@ -21,7 +21,7 @@ Target:
 - [ ] Conditional Rendering di dalam React
 - [ ] Looping List of Data di dalam React
 - [ ] Lifecycle component menggunakan useEffect
-- [ ] Membuat server (json-server)
+- [x] Membuat server (json-server)
 - [ ] Membuat react app untuk client-user (Styling)
 - [ ] Membuat react app untuk client-admin (CRUD)
 - [x] Menentukan Thema Aplikasi

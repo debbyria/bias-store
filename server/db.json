@@ -1,5 +1,5 @@
 {
-  "User": [
+  "users": [
     {
       "id": 1,
       "username": "debby",
@@ -10,7 +10,7 @@
       "address": "Sunter"
     }
   ],
-  "Movies": [
+  "movies": [
     {
       "id": 1,
       "title": "Train to Busan",
@@ -139,9 +139,18 @@
           "profilePict": "https://photos.hancinema.net/photos/fullsizephoto1230069.jpg"
         }
       ]
+    },
+    {
+      "title": "Snowdrop",
+      "synopsis": "Set in 1987, when South Korea was governed by a dictatorial government.\n\nGraduate student Lim Soo-Ho (Jung Hae-In) is covered in blood and he jumps into the female dormitory at Hosu Women’s University. Eun Yeong-Ro (Kim Ji-Soo) finds him and helps to hide him. They develop a romantic relationship.\n\nLim Soo-Ho is graduate student at a prestigious university. He is Korean-German. He has charisma and he is also mysterious.",
+      "trailerUrl": "https://i.ytimg.com/an_webp/7322cvHwhpc/mqdefault_6s.webp?du=3000&sqp=CLeVm5MG&rs=AOn4CLCk6oN8SFJ9Oq6Sk1ElvkAGLB4tqQ",
+      "imgUrl": "https://asianwiki.com/images/f/fb/Snowdrop_Korean_Drama-p2.jpg",
+      "rating": "9",
+      "genreId": "1",
+      "id": 4
     }
   ],
-  "Genres": [
+  "genres": [
     {
       "id": 1,
       "name": "Romantic"
@@ -163,7 +172,7 @@
       "name": "Drama"
     }
   ],
-  "Casts": [
+  "casts": [
     {
       "id": 1,
       "movieId": 1,
