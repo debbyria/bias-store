@@ -1,11 +1,13 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import CreateMovie from './components/CreateMovie';
+import CreateProduct from './components/CreateProduct';
+import FetchProducts from './components/FetchProducts';
 
 function App() {
   return (
     <div className="App">
-      <CreateMovie />
+      <CreateProduct />
+      <FetchProducts />
     </div>
   );
 }
