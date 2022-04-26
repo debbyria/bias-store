@@ -1,7 +1,7 @@
 # P3-Challenge-1
 
-- Tema Aplikasi: Movie
-- CSS Framework: ....
+- Tema Aplikasi: Brand Showcase
+- CSS Framework: Tailwind
 
 Struktur Folder:
 
@@ -40,14 +40,13 @@ Target:
 
 - [ ] Lecture - Custom Hooks
 - [ ] Rules of Hooks
-- [ ] Lecture - React-Router
-- [ ] Membuat router user-side (min: home, detail)
+- [x] Lecture - React-Router
+- [x] Membuat router user-side (min: home, detail)
 - [ ] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
 - [ ] Membuat privateRoute untuk admin
 
 **Report:**
-
-...
+Hari ini saya belajar React Router. Saya mencoba membuat routes untuk menampilkan data products dan form add products. Saya hari ini juga mengganti tema saya dari movie menjadi brand.
 
 ## W1D3
 

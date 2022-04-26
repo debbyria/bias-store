@@ -1,13 +1,15 @@
-// import logo from './logo.svg';
 import './App.css';
 import CreateProduct from './components/CreateProduct';
 import FetchProducts from './components/FetchProducts';
+import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <CreateProduct />
-      <FetchProducts />
+      <Routes>
+        <Route path="/" element={<FetchProducts />} />
+        <Route path="add" element={<CreateProduct />} />
+      </Routes>
     </div>
   );
 }
