@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import TableRow from './TableRow';
+import TableRow from '../components/TableRow';
 
 export default function FetchProducts() {
   const [products, setProducts] = useState([])
