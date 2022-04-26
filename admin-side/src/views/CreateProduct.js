@@ -39,13 +39,16 @@ export default function CreateMovie() {
   }
   return (
     <>
-      <h1 className='text-3xl font-bold underline'>Add New Product</h1>
-      <div className='w-full'>
-        <form className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4' onSubmit={submitHandler}>
+
+      <div className='min-h-screen flex justify-center items-center bg-white'>
+        <form className='p-10 border-[1px] -mt-10 border-slate-200 rounded-md flex flex-col items-center space-y-34' onSubmit={submitHandler}>
+          <div className='py-5'>
+            <h1>Add New Product</h1>
+          </div>
           <input
             placeholder='Name'
             type='text'
-            className='form-input rounded-lg focus:outline-none focus:shadow-outline'
+            className='p-3 border-[1px] border-slate-500 rounded-md w-full'
             value={name}
             onChange={(e) => {
               const value = e.target.value
@@ -54,8 +57,8 @@ export default function CreateMovie() {
             } />
           <br />
           <textarea
-            className='h-32 rounded-lg focus:outline-none focus:shadow-outline'
-            cols='70'
+            className='h-32 border-[1px] border-slate-500 rounded-md'
+            cols='60'
             rows='15'
             placeholder='Description'
             value={description}
@@ -68,7 +71,7 @@ export default function CreateMovie() {
           <br />
           <input
             placeholder='Price'
-            className='form-input rounded-lg focus:outline-none focus:shadow-outline'
+            className='p-3 border-[1px] border-slate-500 rounded-md w-full'
             type='text'
             value={price}
             onChange={(e) => {
@@ -79,7 +82,7 @@ export default function CreateMovie() {
           <br />
           <input
             placeholder='Image Url'
-            className='form-input rounded-lg focus:outline-none focus:shadow-outline'
+            className='p-3 border-[1px] border-slate-500 rounded-md w-full'
             type='text'
             value={mainImg}
             onChange={(e) => {
@@ -90,7 +93,7 @@ export default function CreateMovie() {
           <br />
           <input
             placeholder='Category'
-            className='form-input rounded-lg focus:outline-none focus:shadow-outline'
+            className='p-3 border-[1px] border-slate-500 rounded-md w-full'
             type='text'
             value={category}
             onChange={(e) => {
