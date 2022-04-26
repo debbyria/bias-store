@@ -15,7 +15,7 @@ Target:
 
 - [x] Lecture - React Intro
 - [ ] React: Class Component vs Function Component
-- [ ] Mempelajari State menggunakan useState
+- [x] Mempelajari State menggunakan useState
 - [ ] Mengirim Props baik berupa sebuah state atau function
 - [ ] Event Handling (onClick, onChange, onSubmit)
 - [ ] Conditional Rendering di dalam React
