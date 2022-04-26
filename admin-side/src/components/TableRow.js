@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export default function TableRow() {
-  const []
+
   return (
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
