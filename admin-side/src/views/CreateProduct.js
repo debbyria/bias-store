@@ -91,18 +91,23 @@ export default function CreateMovie() {
             }
             } />
           <br />
-          <input
-            placeholder='Category'
-            className='p-3 border-[1px] border-slate-500 rounded-md w-full'
+          <select className='p-3 border-[1px] border-slate-500 rounded-md w-full'
             type='text'
             value={category}
             onChange={(e) => {
               const value = e.target.value
               setCategory(value)
             }
-            } />
+            } >
+            <option disabled selected value={""}>Select One Category</option>
+            <option value={1}>Tops</option>
+            <option value={2}>Accessories</option>
+            <option value={3}>Cheerings</option>
+            <option value={4}>Albums</option>
+            <option value={5}>Hats</option>
+          </select>
           <br />
-          <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' type='submit' >Add Movie</button>
+          <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full' type='submit' >Add New Product</button>
         </form>
       </div>
     </>
