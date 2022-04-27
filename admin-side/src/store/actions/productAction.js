@@ -23,3 +23,21 @@ export const fetchProducts = () => {
     }
   }
 }
+
+export const deleteProduct = (id) => {
+  return async (dispatch) => {
+    try {
+      let response = await fetch(`http://localhost:3001/products/${id}`, {
+        method: 'DELETE'
+      })
+
+      if (!response.ok) {
+        throw new Error(response.message)
+      }
+      dispatch(fetchProducts())
+
+    } catch (err) {
+      console.log(err)
+    }
+  }
+}
