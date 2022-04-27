@@ -53,19 +53,18 @@ Hari ini saya belajar React Router. Saya mencoba membuat routes untuk menampilka
 
 Target:
 
-- [ ] Lecture - Redux
-- [ ] State vs Global State
-- [ ] Bagaimana cara membuat Store
-- [ ] Bagaimana cara membuat Reducer
-- [ ] Bagaimana cara membuat Action
-- [ ] Membuat Action Creators
-- [ ] Membuat Action Types
-- [ ] Lecture - Redux-thunk (handle async)
-- [ ] Cara menggunakan combineReducers
+- [x] Lecture - Redux
+- [x] State vs Global State
+- [x] Bagaimana cara membuat Store
+- [x] Bagaimana cara membuat Reducer
+- [x] Bagaimana cara membuat Action
+- [x] Membuat Action Creators
+- [x] Membuat Action Types
+- [x] Lecture - Redux-thunk (handle async)
+- [x] Cara menggunakan combineReducers
 
 **Report:**
-
-...
+Hari ini saya belajar megaplikasikan react redux dan middleware. Walaupun saya masih bingung, saya sudah mencoba untuk mengaplikasikan fetching data dengan actions dan berhasil sihh. Tapi susah banget yaaaa :"(. Tapi bisa sih dipelajari. Tapi susahh kak. Oke semangatt yukk
 
 ## W1D4
 
