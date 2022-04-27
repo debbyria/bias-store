@@ -28,14 +28,14 @@ export default function LoginPage() {
           <div className="py-8">
             Bias Store
           </div>
-          <input className="p-3 border-[1px] border-slate-500 rounded-sm w-80" placeholder="Email" type='text'
+          <input className="p-3 border-[1px] border-slate-500 rounded-md w-80" placeholder="Email" type='text'
             value={email}
             onChange={(e) => {
               const value = e.target.value
               setEmail(value)
             }} />
           <div className="flex flex-col space-y-1">
-            <input className="p-3 border-[1px] border-slate-500 rounded-sm w-80" placeholder="Password"
+            <input className="p-3 border-[1px] border-slate-500 rounded-md w-80" placeholder="Password"
               type='password'
               value={password}
               onChange={(e) => {

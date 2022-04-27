@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 
-export default function TableRow({ product }) {
+export default function TableRow({ product, destroyProduct }) {
 
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -23,7 +23,7 @@ export default function TableRow({ product }) {
         <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</button>
       </td>
       <td className="px-6 py-4 text-right">
-        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
+        <button onClick={() => destroyProduct(product.id)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
       </td>
     </tr>
   )
