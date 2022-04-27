@@ -1,29 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import TableRow from '../components/TableRow';
 import { useSelector, useDispatch } from "react-redux";
 
 import { fetchProducts } from "../store/actions/productAction";
 
 export default function FetchProducts() {
-  const [products, setProducts] = useState([])
 
-  async function getProducts() {
-    try {
-      let response = await fetch('http://localhost:3001/products')
 
-      if (!response.ok) {
-        throw new Error(response.message)
-      }
-
-      const data = await response.json()
-      setProducts(data)
-    } catch (err) {
-      console.log(err)
-    }
-  }
+  const { products } = useSelector((state) => state.product
+  )
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    getProducts()
+    dispatch(fetchProducts())
   }, [])
 
   return (

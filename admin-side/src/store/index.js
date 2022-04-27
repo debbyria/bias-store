@@ -1,22 +1,7 @@
-import { configureStore as createStore } from 'redux'
+import { applyMiddleware, legacy_createStore as createStore } from 'redux'
+import rootReducer from './reducers/rootReducers'
+import thunk from 'redux-thunk'
 
-const initialState = {
-  products: []
-}
-
-function productReducer(state = initialState, action) {
-  switch (action.type) {
-    case "products/fetchSuccess":
-      return {
-        ...state,
-        products: action.payload
-      }
-    default:
-      return state
-  }
-
-}
-
-let store = createStore(productReducer)
+let store = createStore(rootReducer, applyMiddleware(thunk))
 
 export default store

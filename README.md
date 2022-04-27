@@ -56,7 +56,7 @@ Target:
 - [ ] Lecture - Redux
 - [ ] State vs Global State
 - [ ] Bagaimana cara membuat Store
-- [ ] Bagaimana cara membuat Reducer
+- [x] Bagaimana cara membuat Reducer
 - [ ] Bagaimana cara membuat Action
 - [ ] Membuat Action Creators
 - [ ] Membuat Action Types
