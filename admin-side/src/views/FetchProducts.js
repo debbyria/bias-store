@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import TableRow from '../components/TableRow';
+import { useSelector, useDispatch } from "react-redux";
+
+import { fetchProducts } from "../store/actions/productAction";
 
 export default function FetchProducts() {
   const [products, setProducts] = useState([])
