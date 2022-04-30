@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function CreateMovie() {
+export default function CreateProduct() {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [price, setPrice] = useState('')
