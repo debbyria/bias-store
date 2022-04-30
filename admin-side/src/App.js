@@ -1,6 +1,6 @@
 import './App.css';
 import CreateProduct from './views/CreateProduct';
-import FetchProducts from './views/FetchProducts';
+import TableProduct from './views/TableProduct';
 import LoginPage from './views/LoginPage';
 import RegisterPage from './views/RegisterPage';
 
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<FetchProducts />} />
+        <Route path="/" element={<TableProduct />} />
         <Route path="/add" element={<CreateProduct />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />

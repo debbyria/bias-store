@@ -3,7 +3,7 @@ import TableRow from '../components/TableRow';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts, deleteProduct } from "../store/actions/productAction";
 
-export default function FetchProducts() {
+export default function TableProduct() {
 
   const { products } = useSelector((state) => state.product
   )
