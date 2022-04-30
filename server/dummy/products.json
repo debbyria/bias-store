@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "NCT DREAM 'Hot Sauce' Beanie with Patches",
+    "slug": "nct-dream-hot-sauce-beanie-with-patches",
+    "description": "<Item Spec> \n1. Material : COTTON, POLYESTER, METAL \n• Order Processing Time: (1-3 days, 3-5 days during high volume) after order confirmation. Make sure your address is in English at check-out. ",
+    "price": 460500,
+    "mainImg": "https://cdn.shopify.com/s/files/1/0069/4203/1983/products/nct-dream-hot-sauce-beanie-with-patches-311677_2000x.jpg?v=1650086553",
+    "categoryId": 5,
+    "authorId": 1
+  },
+  {
+    "id": 2,
+    "name": "SUPER JUNIOR Lo Siento Dad Hat",
+    "slug": "super-junior-lo-siento-dad-hat",
+    "description": "Premium K-pop Dad Hat features Super Junior logo in the front and hit title track Lo Siento in the back.\nContent + Care\n- Material: 85% Acrylic / 15% Wool\n- Sewn embroidery on front and back\n- Size Adjustable; One size fits most\n- Pre-curved Visor\n- 5 Panel Constructions with eyelets\n• Designed by Urban Coconut, USA",
+    "price": 360000,
+    "mainImg": "https://cdn.shopify.com/s/files/1/0069/4203/1983/products/super-junior-lo-siento-dad-hat-963595_2000x.jpg?v=1650086628",
+    "categoryId": 5,
+    "authorId": 1
+  },
+  {
+    "id": 3,
+    "name": "(Normal ver.) LISA FIRST SINGLE ALBUM LALISA",
+    "slug": "lisa-first-single-album",
+    "description": "[Size]\n177 x 257 x 34mm / 800g\n[Contents]\nPackaging + CD + Photo Book (88 pages) + Lyrics Sheet (1 page) + Photo Card (1 of 4 shipped at random) + Instant Photo (1 of 4 shipped at random) + Double-sided Poster (1 poster / first release limited edition only) + Rare Gold Photo Card (1 of 4 shipped at random / first release limited edition only) + Rare Golden Ticket (1 ticket / only 50 shipped at random) + 4x6 Photo (1 photo / limited to YG SELECT pre-orders)",
+    "price": 230000,
+    "mainImg": "https://cafe24img.poxo.com/ygnext/web/product/big/202108/f9978c5ccf6a9b36f35864528afd3bb5.jpg",
+    "categoryId": 4,
+    "authorId": 1
+  },
+  {
+    "id": 4,
+    "name": "aespa Number Plate Key Ring",
+    "slug": "aespa-number-plate-key-ring",
+    "description": "<Item Spec>\n1. Material : Metal\n2. Size : 42 * 22 (mm)\n• Order Processing Time: (1-3 days, 3-5 days during high volume) after order confirmation. Make sure your address is in English at check-out. ",
+    "price": 288000,
+    "mainImg": "https://cdn.shopify.com/s/files/1/0069/4203/1983/products/aespa-number-plate-key-ring-827578_2000x.jpg?v=1650086408",
+    "categoryId": 2,
+    "authorId": 1
+  }
+]
