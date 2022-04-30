@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const { createHashPassword, generateSlug } = require('../helpers/helper');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -11,16 +12,59 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.Product, { foreignKey: 'authorId' })
     }
   }
   User.init({
     username: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    role: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {
+        args: true,
+        msg: 'Email already been used'
+      },
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Email is required'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Email is required'
+        },
+        isEmail: {
+          args: true,
+          msg: 'Must email format'
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Password is required'
+        },
+        len: {
+          args: [5],
+          msg: 'Minimum password consist 5 characters'
+        }
+      }
+    },
+    role: {
+      type: DataTypes.STRING,
+      defaultValue: 'admin'
+    },
     phoneNumber: DataTypes.STRING,
     address: DataTypes.STRING
   }, {
+    hooks: {
+      beforeCreate: (instance, options) => {
+        instance.password = createHashPassword(instance.password)
+      }
+    },
     sequelize,
     modelName: 'User',
   });

@@ -10,18 +10,88 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Product.belongsTo(models.Category, { foreignKey: 'categoryId' })
+      Product.belongsTo(models.User, { foreignKey: 'authorId' })
+      Product.hasMany(models.Image, { foreignKey: 'productId' })
     }
   }
   Product.init({
-    name: DataTypes.STRING,
-    slug: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    price: DataTypes.INTEGER,
-    mainImg: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Name is required'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Name is required'
+        }
+      }
+    },
+    slug: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: true,
+        notEmpty: true
+      }
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Description is required'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Description is required'
+        }
+      }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Price is required'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Price is required'
+        },
+        min: {
+          args: 10000,
+          msg: 'Minimal price is 10000'
+        }
+      }
+    },
+    mainImg: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Image is required'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Image is required'
+        }
+      },
+    },
     categoryId: DataTypes.INTEGER,
     authorId: DataTypes.INTEGER
   }, {
+    hooks: {
+      beforeCreate: (instance, options) => {
+        instance.slug = generateSlug(instance.name)
+      }
+    },
     sequelize,
     modelName: 'Product',
   });

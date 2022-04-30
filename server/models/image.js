@@ -10,12 +10,21 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Image.belongsTo(models.Product, { foreignKey: 'productId' })
     }
   }
   Image.init({
     productId: DataTypes.INTEGER,
-    imgUrl: DataTypes.STRING
+    imgUrl: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Image is required'
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'Image',
