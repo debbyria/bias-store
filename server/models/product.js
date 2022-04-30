@@ -34,8 +34,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notNull: true,
-        notEmpty: true
+        notNull: {
+          args: true,
+          msg: 'Slug is required'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Slug is required'
+        }
       }
     },
     description: {
@@ -87,11 +93,6 @@ module.exports = (sequelize, DataTypes) => {
     categoryId: DataTypes.INTEGER,
     authorId: DataTypes.INTEGER
   }, {
-    hooks: {
-      beforeCreate: (instance, options) => {
-        instance.slug = generateSlug(instance.name)
-      }
-    },
     sequelize,
     modelName: 'Product',
   });

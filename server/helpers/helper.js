@@ -19,7 +19,8 @@ function readPayloadFromToken(token) {
 }
 
 function generateSlug(name) {
-  let data = name.split(' ')
+
+  let data = name.toLowerCase().split(' ')
   data = data.join('-')
   return data
 }
