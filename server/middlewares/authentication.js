@@ -10,14 +10,15 @@ const authentication = async (req, res, next) => {
 
     if (!checkUser) {
       throw { name: 'Authentication Failed' }
+    } else {
+      req.user = {
+        id: checkUser.id,
+        username: checkUser.username
+      }
     }
     next()
   } catch (err) {
-    if (err.name === 'JsonWebTokenError' || err.name === 'Authentication Failed') {
-      res.status(401).json('Authentication Failed')
-    } else {
-      res.status(500).json('Internal Server Error')
-    }
+    res.status(401).json('Authentication Failed')
   }
 }
 
