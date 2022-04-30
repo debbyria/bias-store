@@ -1,6 +1,7 @@
 const { Product, Image, Category } = require('../models/index')
 const { sequelize } = require('../models/index')
 const { generateSlug } = require('../helpers/helper')
+const e = require('express')
 
 class ProductController {
   static async getAllProducts(req, res) {
@@ -101,13 +102,59 @@ class ProductController {
     }
   }
 
-  // static async updateProduct(req, res) {
-  //   try {
+  static async updateProduct(req, res) {
+    try {
+      let { name, description, price, mainImg, categoryId } = req.body
+      let idProduct = req.params.id
+      let slug = ""
 
-  //   } catch (err) {
+      if (name) {
+        slug = generateSlug(name)
+      }
+      let updatedData = await Product.update({
+        name,
+        slug,
+        description,
+        price,
+        mainImg,
+        categoryId
+      }, {
+        where: {
+          id: idProduct
+        }
+      })
+      res.status(201).json(`Product ${name} has been updated`)
+    } catch (err) {
+      if (err.name === 'SequelizeValidationError') {
+        res.status(400).json(err.errors[0].message)
+      } else {
+        res.status(500).json('Internal Server Error')
+      }
+    }
+  }
 
-  //   }
-  // }
+  static async deleteProduct(req, res) {
+    try {
+      let idProduct = req.params.id
+
+      let data = await Product.findByPk(idProduct)
+      if (!data) {
+        throw { name: 'DATA_NOT_FOUND' }
+      }
+      let response = await Product.destroy({
+        where: {
+          id: idProduct
+        }
+      })
+      res.status(200).json('Product has been deleted')
+    } catch (err) {
+      if (err.name === 'DATA_NOT_FOUND') {
+        res.status(404).json('Data Not Found')
+      } else {
+        res.status(500).json('Internal Server Error')
+      }
+    }
+  }
 }
 
 module.exports = ProductController
