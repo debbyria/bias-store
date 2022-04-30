@@ -1,7 +1,7 @@
 const { checkPassWithHash, generateToken } = require('../helpers/helper')
 const { User } = require('../models/index')
 
-class userController {
+class UserController {
   static async userRegister(req, res) {
     try {
       let { username, email, password, phoneNumber, address } = req.body
@@ -26,6 +26,8 @@ class userController {
         })
 
         res.status(400).json({ errors: errors.join(', ') })
+      } else {
+        res.status(500).json('Internal Server Error')
       }
     }
   }
@@ -68,9 +70,11 @@ class userController {
         res.status(401).json({
           errors: 'Invalid Email or Password'
         })
+      } else {
+        res.status(500).json('Internal Server Error')
       }
     }
   }
 }
 
-module.exports = userController
+module.exports = UserController
