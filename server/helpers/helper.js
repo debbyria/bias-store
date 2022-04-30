@@ -28,5 +28,6 @@ module.exports = {
   createHashPassword,
   checkPassWithHash,
   generateToken,
+  readPayloadFromToken,
   generateSlug
 }

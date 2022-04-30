@@ -87,6 +87,11 @@ module.exports = (sequelize, DataTypes) => {
     categoryId: DataTypes.INTEGER,
     authorId: DataTypes.INTEGER
   }, {
+    hooks: {
+      beforeCreate: (instance, options) => {
+        instance.slug = generateSlug(instance.name)
+      }
+    },
     sequelize,
     modelName: 'Product',
   });
