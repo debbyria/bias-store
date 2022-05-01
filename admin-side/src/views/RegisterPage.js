@@ -1,4 +1,11 @@
-import { useState } from "react";
+import {
+  // useEffect, 
+  useState
+} from "react"
+import { useDispatch } from "react-redux"
+// import { fetchProducts } from "../store/actions/productAction"
+import { postRegisterUser } from "../store/actions/userAction"
+import { useNavigate } from 'react-router-dom'
 
 export default function RegisterPage() {
   const [username, setUsername] = useState("")
@@ -6,6 +13,28 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")
   const [address, setAddress] = useState("")
+  // const { userData } = useSelector((state) => state.userData)
+  const dispatch = useDispatch()
+
+  let data = {
+    username,
+    email,
+    password,
+    phoneNumber,
+    address
+  }
+
+  const navigate = useNavigate()
+
+  function registerUser() {
+
+    dispatch(postRegisterUser(data))
+    navigate("/login")
+  }
+
+  // useEffect(() => {
+  //   dispatch(fetchProducts())
+  // }, [])
 
   return (
     <>
@@ -20,7 +49,8 @@ export default function RegisterPage() {
               onChange={(e) => {
                 const value = e.target.value
                 setUsername(value)
-              }} />
+              }}
+            />
             <input className="p-3 border-[1px] border-slate-500 rounded-md w-full" placeholder="Email"
               type='text'
               value={email}
@@ -55,7 +85,7 @@ export default function RegisterPage() {
             />
           </div>
           <div className="flex flex-col space-y-5 w-10/12">
-            <button className="w-full bg-[#0070ba] rounded-3xl p-3 text-white font-bold transition duration-200 hover:bg-[#003087]">Sign Up</button>
+            <button onClick={() => registerUser()} className="w-full bg-[#0070ba] rounded-3xl p-3 text-white font-bold transition duration-200 hover:bg-[#003087]">Sign Up</button>
           </div>
         </div>
       </div>
