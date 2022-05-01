@@ -9,7 +9,12 @@ export const fetchProductsSuccess = (payload) => {
 export const fetchProducts = () => {
   return async (dispatch) => {
     try {
-      let response = await fetch('http://localhost:3001/products')
+      let response = await fetch('http://localhost:3001/products', {
+        method: 'GET',
+        headers: {
+          access_token: localStorage.getItem("access_token")
+        }
+      })
 
       if (!response.ok) {
         throw new Error(response.message)

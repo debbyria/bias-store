@@ -1,24 +1,35 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { postLoginUser } from "../store/actions/userAction";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-
-  async function postLogin() {
-    try {
-      let response = await fetch('http://localhost:3001 ')
-      console.log(response)
-      if (!response.ok) {
-        throw new Error(response.message)
-      }
-    } catch (err) {
-      console.log(err)
-    }
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  // async function postLogin() {
+  //   try {
+  //     let response = await fetch('http://localhost:3001/users/login', {
+  //       method: 'POST'
+  //     })
+  //     console.log(response)
+  //     if (!response.ok) {
+  //       throw new Error(response.message)
+  //     }
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
+  let data = {
+    email,
+    password
   }
 
   const loginHandler = (e) => {
     e.preventDefault()
-    postLogin()
+    dispatch(postLoginUser(data))
+    navigate("/")
   }
 
   return (
