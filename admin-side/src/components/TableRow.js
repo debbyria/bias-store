@@ -6,16 +6,16 @@ export default function TableRow({ product, destroyProduct }) {
       <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
         {product.id}
       </th>
-      <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+      <th scope="row" className="px-3 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
         {product.name}
       </th>
-      <td className="px-6 py-4">
+      <td scope="row" className="px-auto py-4">
         {product.description}
       </td>
-      <td className="px-6 py-4">
+      <td scope="row" className="px-auto py-4">
         Rp {product.price}
       </td>
-      <td className="px-6 py-4">
+      <td scope="row" className="px-auto py-4">
         <img src={product.mainImg} />
       </td>
       <td className="px-6 py-4 text-right">

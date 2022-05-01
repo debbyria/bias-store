@@ -26,7 +26,7 @@ export default function TableProduct() {
               <th scope="col" className="px-6 py-3">
                 No. id
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-3 py-3">
                 Product name
               </th>
               <th scope="col" className="px-6 py-3">
