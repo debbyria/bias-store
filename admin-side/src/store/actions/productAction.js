@@ -33,7 +33,11 @@ export const deleteProduct = (id) => {
   return async (dispatch) => {
     try {
       let response = await fetch(`http://localhost:3001/products/${id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+          "Content-Type": "application/json",
+          "access_token": localStorage.getItem("access_token")
+        }
       })
 
       if (!response.ok) {
@@ -43,6 +47,30 @@ export const deleteProduct = (id) => {
 
     } catch (err) {
       console.log(err)
+    }
+  }
+}
+
+export const addProduct = (data) => {
+  return async (dispatch) => {
+    try {
+      let response = await fetch('http://localhost:3001/products/add', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+          "access_token": localStorage.getItem("access_token")
+        },
+        body: JSON.stringify(data)
+      })
+
+      if (!response.ok) {
+        throw new Error(response.message)
+      }
+
+      fetchProducts()
+      console.log(response.data)
+    } catch (error) {
+      console.log(error)
     }
   }
 }

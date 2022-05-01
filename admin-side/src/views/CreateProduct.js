@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { addProduct } from '../store/actions/productAction'
 
 export default function CreateProduct() {
   const [name, setName] = useState('')
@@ -6,31 +9,24 @@ export default function CreateProduct() {
   const [price, setPrice] = useState('')
   const [mainImg, setMainImg] = useState('')
   const [category, setCategory] = useState('')
+  const [image1, setImage1] = useState('')
+  const [image2, setImage2] = useState('')
 
   const data = {
     name,
     description,
     price,
     mainImg,
+    image1,
+    image2,
     category
   }
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   async function submitButton() {
-    try {
-      let response = await fetch('http://localhost:3001/products', {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
-      if (!response.ok) {
-        throw new Error(response.message)
-      }
-      console.log(response.data)
-    } catch (error) {
-      console.log(error)
-    }
+    dispatch(addProduct(data))
+    navigate("/")
   }
 
   const submitHandler = (e) => {
@@ -88,6 +84,28 @@ export default function CreateProduct() {
             onChange={(e) => {
               const value = e.target.value
               setMainImg(value)
+            }
+            } />
+          <br />
+          <input
+            placeholder='Image Url 1'
+            className='p-3 border-[1px] border-slate-500 rounded-md w-full'
+            type='text'
+            value={image1}
+            onChange={(e) => {
+              const value = e.target.value
+              setImage1(value)
+            }
+            } />
+          <br />
+          <input
+            placeholder='Image Url 2'
+            className='p-3 border-[1px] border-slate-500 rounded-md w-full'
+            type='text'
+            value={image2}
+            onChange={(e) => {
+              const value = e.target.value
+              setImage2(value)
             }
             } />
           <br />
