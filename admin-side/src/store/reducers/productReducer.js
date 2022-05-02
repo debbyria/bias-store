@@ -1,7 +1,8 @@
-import { FETCH_PRODUCTS_SUCCESS } from "../actions/actionType";
+import { FETCH_PRODUCTS_SUCCESS, GET_DETAIL_SUCCESS } from "../actions/actionType";
 
 const initialState = {
-  products: []
+  products: [],
+  detailProduct: {}
 }
 
 function productReducer(state = initialState, action) {
@@ -10,6 +11,11 @@ function productReducer(state = initialState, action) {
       return {
         ...state,
         products: action.payload
+      }
+    case GET_DETAIL_SUCCESS:
+      return {
+        ...state,
+        detailProduct: action.payload
       }
     default:
       return state

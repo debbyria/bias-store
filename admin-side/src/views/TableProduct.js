@@ -1,17 +1,13 @@
 import { useEffect } from "react";
 import TableRow from '../components/TableRow';
 import { useSelector, useDispatch } from "react-redux";
-import { fetchProducts, deleteProduct } from "../store/actions/productAction";
+import { fetchProducts } from "../store/actions/productAction";
 
 export default function TableProduct() {
 
   const { products } = useSelector((state) => state.product
   )
   const dispatch = useDispatch()
-
-  function destroyProduct(id) {
-    dispatch(deleteProduct(id))
-  }
 
   useEffect(() => {
     dispatch(fetchProducts())
@@ -47,7 +43,7 @@ export default function TableProduct() {
           </thead>
           <tbody>
             {products.map((product) => (
-              <TableRow destroyProduct={destroyProduct} product={product} key={product.id} />
+              <TableRow product={product} key={product.id} />
             ))}
           </tbody>
         </table>

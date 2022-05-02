@@ -5,6 +5,7 @@ import LoginPage from './views/LoginPage';
 import RegisterPage from './views/RegisterPage';
 import NavigationBar from './components/NavigationBar';
 import EditProduct from './components/EditProduct'
+import CategoryList from './views/CategoryList';
 
 import {
   Routes,
@@ -21,8 +22,8 @@ function App() {
         <Route path="/add" element={<CreateProduct />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/edit" element={<EditProduct />} />
-
+        <Route path="/edit/:slug" element={<EditProduct />} />
+        <Route path="/categories" element={<CategoryList />} />
 
       </Routes>
     </div>

@@ -1,8 +1,21 @@
-// import React, { useState } from "react";
+import { getDetailProduct } from "../store/actions/productAction"
+import { useDispatch } from "react-redux"
+// import EditProduct from "./EditProduct"
+import { useNavigate } from "react-router-dom"
+import { deleteProduct } from "../store/actions/productAction"
 
-export default function TableRow({ product, destroyProduct }) {
+export default function TableRow({ product }) {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  // const [showModal, setShowModal] = React.useState(false)
+  async function editButton(slug) {
+    dispatch(getDetailProduct(slug))
+    navigate(`/edit/${slug}`)
+  }
+
+  function destroyProduct(id) {
+    dispatch(deleteProduct(id))
+  }
 
   return (
     <>
@@ -23,7 +36,7 @@ export default function TableRow({ product, destroyProduct }) {
           <img className="mx-auto" width='200px' src={product.mainImg} />
         </td>
         <td className="px-6 py-4 text-right">
-          <button className="w-full rounded-3xl h-10
+          <button onClick={() => editButton(product.slug)} className="w-full rounded-3xl h-10
           bg-blue-400 font-medium mx-auto text-black hover:text-white dark:text-blue-500">Edit</button>
         </td>
         <td className="px-6 py-4 text-right">
