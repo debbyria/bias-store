@@ -1,4 +1,7 @@
 import { FETCH_PRODUCTS_SUCCESS, GET_DETAIL_SUCCESS } from "./actionType"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const MySwal = withReactContent(Swal)
 
 export const fetchProductsSuccess = (payload) => {
   return {
@@ -21,7 +24,7 @@ export const fetchProducts = () => {
       }
 
       const data = await response.json()
-      // console.log(data)
+
       dispatch(fetchProductsSuccess(data))
     } catch (err) {
       console.log(err)
@@ -64,13 +67,18 @@ export const addProduct = (data) => {
       })
 
       if (!response.ok) {
-        throw new Error(response.message)
+        let result = await response.json()
+        throw new Error(result)
       }
-
-      fetchProducts()
-      console.log(response.data)
+      MySwal.fire({
+        icon: "success",
+        text: "Succeed add new product"
+      })
     } catch (error) {
-      console.log(error)
+      MySwal.fire({
+        icon: "error",
+        text: error
+      })
     }
   }
 }

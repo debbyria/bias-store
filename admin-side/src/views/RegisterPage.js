@@ -1,9 +1,5 @@
-import {
-  // useEffect, 
-  useState
-} from "react"
+import { useState } from "react"
 import { useDispatch } from "react-redux"
-// import { fetchProducts } from "../store/actions/productAction"
 import { postRegisterUser } from "../store/actions/userAction"
 import { useNavigate } from 'react-router-dom'
 
@@ -13,7 +9,7 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")
   const [address, setAddress] = useState("")
-  // const { userData } = useSelector((state) => state.userData)
+
   const dispatch = useDispatch()
 
   let data = {
@@ -29,12 +25,13 @@ export default function RegisterPage() {
   function registerUser() {
 
     dispatch(postRegisterUser(data))
-    navigate("/login")
+      .then(() => {
+        navigate("/")
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
-
-  // useEffect(() => {
-  //   dispatch(fetchProducts())
-  // }, [])
 
   return (
     <>

@@ -17,7 +17,13 @@ export default function LoginPage() {
   const loginHandler = (e) => {
     e.preventDefault()
     dispatch(postLoginUser(data))
-    navigate("/")
+      .then(() => {
+        navigate("/")
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+
   }
 
   return (

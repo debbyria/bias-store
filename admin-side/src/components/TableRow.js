@@ -23,7 +23,7 @@ export default function TableRow({ product }) {
         <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
           {product.id}
         </th>
-        <th scope="row" className="px-3 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+        <th scope="row" className="w-72 px-3 py-4 font-medium text-gray-900 dark:text-white whitespace-normal">
           {product.name}
         </th>
         <td scope="row" className="px-auto py-4">
