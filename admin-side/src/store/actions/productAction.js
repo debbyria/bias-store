@@ -21,7 +21,7 @@ export const fetchProducts = () => {
       }
 
       const data = await response.json()
-
+      console.log(data)
       dispatch(fetchProductsSuccess(data))
     } catch (err) {
       console.log(err)
@@ -71,6 +71,16 @@ export const addProduct = (data) => {
       console.log(response.data)
     } catch (error) {
       console.log(error)
+    }
+  }
+}
+
+export const getDetailProduct = (slug) => {
+  return async (dispatch) => {
+    try {
+      let response = await fetch('http://localhost:3001/products')
+    } catch (err) {
+      console.log(err)
     }
   }
 }

@@ -4,6 +4,7 @@ import TableProduct from './views/TableProduct';
 import LoginPage from './views/LoginPage';
 import RegisterPage from './views/RegisterPage';
 import NavigationBar from './components/NavigationBar';
+import EditProduct from './components/EditProduct'
 
 import {
   Routes,
@@ -20,6 +21,8 @@ function App() {
         <Route path="/add" element={<CreateProduct />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/edit" element={<EditProduct />} />
+
 
       </Routes>
     </div>
