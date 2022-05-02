@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS_SUCCESS } from "./actionType"
+import { FETCH_PRODUCTS_SUCCESS, GET_DETAIL_SUCCESS } from "./actionType"
 
 export const fetchProductsSuccess = (payload) => {
   return {
@@ -21,7 +21,7 @@ export const fetchProducts = () => {
       }
 
       const data = await response.json()
-      console.log(data)
+      // console.log(data)
       dispatch(fetchProductsSuccess(data))
     } catch (err) {
       console.log(err)
@@ -75,10 +75,31 @@ export const addProduct = (data) => {
   }
 }
 
+export const getDetailSuccess = (payload) => {
+  return {
+    type: GET_DETAIL_SUCCESS,
+    payload
+  }
+}
+
 export const getDetailProduct = (slug) => {
   return async (dispatch) => {
     try {
-      let response = await fetch('http://localhost:3001/products')
+      let response = await fetch(`http://localhost:3001/products/${slug}`, {
+        method: 'GET',
+        headers: {
+          "Content-Type": "application/json",
+          "access_token": localStorage.getItem("access_token")
+        }
+      })
+      let data = await response.json()
+
+      dispatch(getDetailSuccess(data))
+
+      console.log(data)
+      if (!response.ok) {
+        throw new Error(response.message)
+      }
     } catch (err) {
       console.log(err)
     }

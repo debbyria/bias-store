@@ -1,6 +1,16 @@
 const { Category } = require('../models/index')
 
 class CategoryController {
+  static async getCategory(req, res) {
+    try {
+      let data = await Category.findAll()
+      res.status(200).json(data)
+
+    } catch (err) {
+      res.status(500).json('Internal Server Error')
+    }
+  }
+
   static async addCategory(req, res) {
     try {
       let { name } = req.body
