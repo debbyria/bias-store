@@ -8,19 +8,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("")
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  // async function postLogin() {
-  //   try {
-  //     let response = await fetch('http://localhost:3001/users/login', {
-  //       method: 'POST'
-  //     })
-  //     console.log(response)
-  //     if (!response.ok) {
-  //       throw new Error(response.message)
-  //     }
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
+
   let data = {
     email,
     password
@@ -36,8 +24,11 @@ export default function LoginPage() {
     <>
       <div className="min-h-screen flex justify-center items-center bg-white">
         <div className="p-10 border-[1px] -mt-10 border-slate-200 rounded-md flex flex-col items-center space-y-3">
-          <div className="py-8">
+          <div className="py-8 text-xl brand-h1">
             Bias Store
+          </div>
+          <div>
+            Sign In to Your Account
           </div>
           <input className="p-3 border-[1px] border-slate-500 rounded-md w-80" placeholder="Email" type='text'
             value={email}
@@ -56,11 +47,7 @@ export default function LoginPage() {
             />
           </div>
           <div className="flex flex-col space-y-5 w-full">
-            <button onClick={loginHandler} className="w-full bg-[#0070ba] rounded-3xl p-3 text-white font-bold transition duration-200 hover:bg-[#003087]">Log in</button>
-            <div className="flex items-center justify-center border-t-[1px] border-t-slate-300 w-full relative">
-              <div className="-mt-1 font-bod bg-white px-5 absolute">Or</div>
-            </div>
-            <button className="w-full border-blue-900 hover:border-[#003087] hover:border-[2px] border-[1px] rounded-3xl p-3 text-[#0070ba] font-bold transition duration-200">Sign Up</button>
+            <button onClick={loginHandler} className="w-full rounded-3xl p-3 text-white font-bold transition duration-200">Log in</button>
           </div>
         </div>
       </div>

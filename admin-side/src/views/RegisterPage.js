@@ -40,8 +40,8 @@ export default function RegisterPage() {
     <>
       <div className="min-h-screen flex justify-center items-center bg-white">
         <div className="p-10 border-[1px] -mt-10 border-slate-200 rounded-md flex flex-col items-center space-y-4 w-1/2">
-          <div className="py-8">
-            Join Us Now
+          <div className="py-8 text-2xl">
+            Register New Admin
           </div>
           <div className="flex flex-col space-y-4 w-10/12">
             <input className="p-3 border-[1px] border-slate-500 rounded-md w-full" placeholder="Username" type='text'
@@ -85,7 +85,7 @@ export default function RegisterPage() {
             />
           </div>
           <div className="flex flex-col space-y-5 w-10/12">
-            <button onClick={() => registerUser()} className="w-full bg-[#0070ba] rounded-3xl p-3 text-white font-bold transition duration-200 hover:bg-[#003087]">Sign Up</button>
+            <button onClick={() => registerUser()} className="w-full rounded-3xl p-3 text-white font-bold transition duration-200">Sign Up</button>
           </div>
         </div>
       </div>

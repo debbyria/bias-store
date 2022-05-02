@@ -6,7 +6,12 @@ const e = require('express')
 class ProductController {
   static async getAllProducts(req, res) {
     try {
-      let data = await Product.findAll()
+      let data = await Product.findAll({
+        include: {
+          model: Category,
+          attributes: { exclude: ['productId', 'createdAt', 'updatedAt'] }
+        }
+      })
       res.status(200).json(data)
     } catch (err) {
       res.status(500).json('Internal Server Error')
