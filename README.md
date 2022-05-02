@@ -23,7 +23,7 @@ Target:
 - [x] Lifecycle component menggunakan useEffect
 - [x] Membuat server (json-server)
 - [ ] Membuat react app untuk client-user (Styling)
-- [ ] Membuat react app untuk client-admin (CRUD)
+- [x] Membuat react app untuk client-admin (CRUD)
 - [x] Menentukan Thema Aplikasi
 - [x] Menentukan Design dan pemilihan CSS Framework
 
@@ -70,11 +70,11 @@ Hari ini saya belajar megaplikasikan react redux dan middleware. Walaupun saya m
 
 Target:
 
-- [ ] Lecture - SQL Advance DQL
-- [ ] Membuat server mengguanakan express.js, postgreSQL dan Sequelize
-- [ ] Menentukan associations antar tables
-- [ ] Lecture - SQL Transaction
-- [ ] Membuat transaction saat membuat entitas baru pada main table. Pastikan ada assosiasi di dalamnya
+- [x] Lecture - SQL Advance DQL
+- [x] Membuat server mengguanakan express.js, postgreSQL dan Sequelize
+- [x] Menentukan associations antar tables
+- [x] Lecture - SQL Transaction
+- [x] Membuat transaction saat membuat entitas baru pada main table. Pastikan ada assosiasi di dalamnya
 
 **Report:**
 

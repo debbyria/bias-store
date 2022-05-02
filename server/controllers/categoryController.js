@@ -14,6 +14,7 @@ class CategoryController {
   static async addCategory(req, res) {
     try {
       let { name } = req.body
+
       let newCetagory = await Category.create({ name })
 
       res.status(201).json({

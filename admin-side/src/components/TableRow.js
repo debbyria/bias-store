@@ -23,7 +23,7 @@ export default function TableRow({ product }) {
         <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
           {product.id}
         </th>
-        <th scope="row" className="px-3 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+        <th scope="row" className="w-72 px-3 py-4 font-medium text-gray-900 dark:text-white whitespace-normal">
           {product.name}
         </th>
         <td scope="row" className="px-auto py-4">
@@ -32,16 +32,16 @@ export default function TableRow({ product }) {
         <td scope="row" className="px-auto py-4">
           Rp {product.price}
         </td>
-        <td scope="row" className="px-auto py-4">
+        <th scope="row" className="px-auto py-4">
           <img className="mx-auto" width='200px' src={product.mainImg} />
-        </td>
-        <td className="px-6 py-4 text-right">
+        </th>
+        <th className="px-6 py-4 text-right">
           <button onClick={() => editButton(product.slug)} className="w-full rounded-3xl h-10
           bg-blue-400 font-medium mx-auto text-black hover:text-white dark:text-blue-500">Edit</button>
-        </td>
-        <td className="px-6 py-4 text-right">
+        </th>
+        <th className="px-6 py-4 text-right">
           <button onClick={() => destroyProduct(product.id)} className="w-full rounded-3xl h-10 bg-red-400 font-medium mx-auto text-black hover:text-white dark:text-white ">Delete</button>
-        </td>
+        </th>
       </tr>
     </>
   )

@@ -1,13 +1,7 @@
 import { LOGIN_USER_SUCCESS } from "../actions/actionType"
 
 const initialState = {
-  // userData: {
-  //   username: "",
   email: "",
-  // password: "",
-  // phoneNumber: "",
-  // address: ""
-  // },
   access_token: ""
 }
 

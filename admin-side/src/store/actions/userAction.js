@@ -1,6 +1,7 @@
 import { REGISTER_USER_SUCCESS, LOGIN_USER_SUCCESS } from "./actionType"
-// import { fetchProducts } from "./productAction"
-// import { browserHistory } from "react-router"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const MySwal = withReactContent(Swal)
 
 export const registerUserSuccess = (payload) => {
   return {
@@ -27,20 +28,19 @@ export const postRegisterUser = (data) => {
         body: JSON.stringify(data)
       })
       let result = await response.json()
-      // console.log(response.data)
-      console.log(result);
 
-      // swal success
       if (!response.ok) {
         throw new Error(result.errors)
       }
-      // let navigate = useNavigate()
-      // navigate("/login")
-      // browserHistory.push('/login')
-      // dispatch(fetchProducts())
+      MySwal.fire({
+        icon: "success",
+        text: "Succeed add new user"
+      })
     } catch (err) {
-      // swal error
-      console.log(err)
+      MySwal.fire({
+        icon: "error",
+        text: err
+      })
     }
   }
 }
@@ -57,16 +57,24 @@ export const postLoginUser = (data) => {
       })
 
       let result = await response.json()
-      // console.log(result)
 
-      localStorage.setItem("access_token", result.access_token)
+      if (result.access_token) {
+        localStorage.setItem("access_token", result.access_token)
+      }
 
       if (!response.ok) {
         throw new Error(result.errors)
       }
+      MySwal.fire({
+        icon: "success",
+        title: 'Succeed Login',
+      })
 
     } catch (err) {
-      console.log(err)
+      MySwal.fire({
+        icon: "error",
+        text: err
+      })
     }
   }
 }
