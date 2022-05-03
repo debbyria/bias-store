@@ -1,8 +1,4 @@
 import { GET_CATEGORIES_SUCCESS } from "./actionType"
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-
-const MySwal = withReactContent(Swal)
 
 export const getCategoriesSuccess = (payload) => {
   return {
@@ -21,19 +17,14 @@ export const getCategories = () => {
         }
       })
       if (!response.ok) {
-        MySwal.fire({
-          icon: "error"
-        })
         throw new Error(response.message)
       }
 
       const data = await response.json()
 
       dispatch(getCategoriesSuccess(data))
+
     } catch (err) {
-      MySwal.fire({
-        icon: "error"
-      })
       console.log(err)
     }
   }
@@ -55,8 +46,9 @@ export const deleteCategory = (id) => {
       }
       dispatch(getCategories())
 
+      return 'success'
     } catch (err) {
-      console.log(err)
+      return err
     }
   }
 }
@@ -77,11 +69,9 @@ export const addCategory = (data) => {
         throw new Error(response.message)
       }
       getCategories()
+      return 'success'
     } catch (err) {
-      MySwal.fire({
-        icon: "error",
-        text: "Name is required"
-      })
+      return err
     }
   }
 }

@@ -2,6 +2,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postLoginUser } from "../store/actions/userAction";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const MySwal = withReactContent(Swal)
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
@@ -14,15 +18,26 @@ export default function LoginPage() {
     password
   }
 
-  const loginHandler = (e) => {
-    e.preventDefault()
-    dispatch(postLoginUser(data))
-      .then(() => {
+  async function loginHandler(e) {
+    try {
+      e.preventDefault()
+      const response = await dispatch(postLoginUser(data))
+
+      if (response === 'success') {
+        MySwal.fire({
+          icon: "success",
+          title: 'Succeed Login',
+        })
         navigate("/")
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+      } else {
+        MySwal.fire({
+          icon: "error",
+          text: response
+        })
+      }
+    } catch (err) {
+      console.log(err)
+    }
 
   }
 

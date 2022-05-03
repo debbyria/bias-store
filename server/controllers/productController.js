@@ -80,7 +80,7 @@ class ProductController {
   static async getDetailProduct(req, res) {
     try {
       let { slug } = req.params
-      const response = await Product.findOne({
+      let response = await Product.findOne({
         include: [{
           model: Category,
           attributes: { exclude: ['productId', 'createdAt', 'updatedAt'] }
@@ -94,11 +94,9 @@ class ProductController {
         attributes: { exclude: ['categoryId', 'authorId', 'createdAt', 'updatedAt'] }
       })
 
-      if (!response) {
-        throw { name: 'DATA_NOT_FOUND' }
-      }
       res.status(200).json(response)
     } catch (err) {
+
       if (err.name === 'DATA_NOT_FOUND') {
         res.status(404).json('Data Not Found')
       } else {
@@ -109,14 +107,43 @@ class ProductController {
 
   static async updateProduct(req, res) {
     try {
-      let { name, description, price, mainImg, categoryId } = req.body
+      let { name, description, price, mainImg, categoryId, image1, image2 } = req.body
+
       let idProduct = req.params.id
       let slug = ""
 
       if (name) {
         slug = generateSlug(name)
       }
-      let updatedData = await Product.update({
+
+      await Image.destroy({
+        where: {
+          productId: idProduct
+        }
+      })
+
+      let images = []
+
+      if (image1) {
+        let obj = {
+          productId: idProduct,
+          imgUrl: image1
+        }
+        images.push(obj)
+      }
+      if (image2) {
+        let obj = {
+          productId: idProduct,
+          imgUrl: image2
+        }
+        images.push(obj)
+      }
+
+      if (images.length > 0) {
+        await Image.bulkCreate(images)
+      }
+
+      await Product.update({
         name,
         slug,
         description,
@@ -128,6 +155,7 @@ class ProductController {
           id: idProduct
         }
       })
+
       res.status(201).json(`Product ${name} has been updated`)
     } catch (err) {
       if (err.name === 'SequelizeValidationError') {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import TableRow from '../components/TableRow';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../store/actions/productAction";
-import CreateProduct from "./CreateProduct";
+import CreateProduct from "../components/CreateProduct";
 
 export default function TableProduct() {
   const [showModal, setShowModal] = useState(false)

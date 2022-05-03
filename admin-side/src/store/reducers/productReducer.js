@@ -2,7 +2,19 @@ import { FETCH_PRODUCTS_SUCCESS, GET_DETAIL_SUCCESS } from "../actions/actionTyp
 
 const initialState = {
   products: [],
-  detailProduct: {}
+  detailProduct: {
+    Category: {
+      id: ""
+    },
+    Images: [
+      {
+        imgUrl: ""
+      },
+      {
+        imgUrl: ""
+      }
+    ]
+  }
 }
 
 function productReducer(state = initialState, action) {

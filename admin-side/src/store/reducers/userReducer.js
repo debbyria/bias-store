@@ -7,11 +7,6 @@ const initialState = {
 
 function userReducer(state = initialState, action) {
   switch (action.type) {
-    // case REGISTER_USER_SUCCESS:
-    //   return {
-    //     ...state,
-    //     email: action.payload
-    //   }
     case LOGIN_USER_SUCCESS:
       return {
         ...state,

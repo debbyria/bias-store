@@ -1,7 +1,4 @@
 import { FETCH_PRODUCTS_SUCCESS, GET_DETAIL_SUCCESS } from "./actionType"
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-const MySwal = withReactContent(Swal)
 
 export const fetchProductsSuccess = (payload) => {
   return {
@@ -48,8 +45,10 @@ export const deleteProduct = (id) => {
       }
       dispatch(fetchProducts())
 
+      return 'success'
+
     } catch (err) {
-      console.log(err)
+      return err
     }
   }
 }
@@ -70,15 +69,11 @@ export const addProduct = (data) => {
         let result = await response.json()
         throw new Error(result)
       }
-      MySwal.fire({
-        icon: "success",
-        text: "Succeed add new product"
-      })
+
+      dispatch(fetchProducts())
+      return 'success'
     } catch (error) {
-      MySwal.fire({
-        icon: "error",
-        text: error
-      })
+      return error
     }
   }
 }
@@ -103,13 +98,37 @@ export const getDetailProduct = (slug) => {
       let data = await response.json()
 
       dispatch(getDetailSuccess(data))
-
-      console.log(data)
       if (!response.ok) {
         throw new Error(response.message)
       }
     } catch (err) {
       console.log(err)
+    }
+  }
+}
+
+export const updateProduct = (id, data) => {
+  return async (dispatch) => {
+    try {
+      let response = await fetch(`http://localhost:3001/products/${id}`, {
+        method: 'PUT',
+        headers: {
+          "Content-Type": "application/json",
+          "access_token": localStorage.getItem("access_token")
+        },
+        body: JSON.stringify(data)
+      })
+
+      let result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.message)
+      }
+
+      dispatch(fetchProducts())
+      return 'success'
+    } catch (err) {
+      return err
     }
   }
 }

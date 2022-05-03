@@ -1,20 +1,43 @@
 import { getDetailProduct } from "../store/actions/productAction"
-import { useDispatch } from "react-redux"
-// import EditProduct from "./EditProduct"
+import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { deleteProduct } from "../store/actions/productAction"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const MySwal = withReactContent(Swal)
 
 export default function TableRow({ product }) {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   async function editButton(slug) {
-    dispatch(getDetailProduct(slug))
-    navigate(`/edit/${slug}`)
+    try {
+      await dispatch(getDetailProduct(slug))
+      navigate(`/edit/${slug}`)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
-  function destroyProduct(id) {
-    dispatch(deleteProduct(id))
+  async function destroyProduct(id) {
+    try {
+      let response = await dispatch(deleteProduct(id))
+
+      if (response === 'success') {
+        MySwal.fire({
+          icon: "success",
+          text: "Succeed delete product"
+        })
+      } else {
+        MySwal.fire({
+          icon: "error",
+          text: "Failed delete product"
+        })
+      }
+    } catch (err) {
+      console.log(err)
+    }
+
   }
 
   return (

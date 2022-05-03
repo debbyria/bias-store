@@ -1,7 +1,4 @@
 import { REGISTER_USER_SUCCESS, LOGIN_USER_SUCCESS } from "./actionType"
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-const MySwal = withReactContent(Swal)
 
 export const registerUserSuccess = (payload) => {
   return {
@@ -24,6 +21,7 @@ export const postRegisterUser = (data) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'access_token': localStorage.getItem("access_token")
         },
         body: JSON.stringify(data)
       })
@@ -32,21 +30,16 @@ export const postRegisterUser = (data) => {
       if (!response.ok) {
         throw new Error(result.errors)
       }
-      MySwal.fire({
-        icon: "success",
-        text: "Succeed add new user"
-      })
+
+      return 'success'
     } catch (err) {
-      MySwal.fire({
-        icon: "error",
-        text: err
-      })
+      return err
     }
   }
 }
 
 export const postLoginUser = (data) => {
-  return async (dispatch) => {
+  return async () => {
     try {
       let response = await fetch('http://localhost:3001/users/login', {
         method: 'POST',
@@ -58,23 +51,15 @@ export const postLoginUser = (data) => {
 
       let result = await response.json()
 
-      if (result.access_token) {
-        localStorage.setItem("access_token", result.access_token)
-      }
-
       if (!response.ok) {
         throw new Error(result.errors)
       }
-      MySwal.fire({
-        icon: "success",
-        title: 'Succeed Login',
-      })
 
+      localStorage.setItem("access_token", result.access_token)
+
+      return 'success'
     } catch (err) {
-      MySwal.fire({
-        icon: "error",
-        text: err
-      })
+      return err
     }
   }
 }
