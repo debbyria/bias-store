@@ -1,12 +1,31 @@
 import { useDispatch } from "react-redux"
-import { deleteCategory } from "../store/actions/categoryAction"
+import { deleteCategory, getCategories } from "../store/actions/categoryAction"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import { useEffect } from "react"
+const MySwal = withReactContent(Swal)
 
 export default function CategoryRow({ category }) {
   const dispatch = useDispatch()
 
-  function destroyCategory(id) {
-    dispatch(deleteCategory(id))
+  async function destroyCategory(id) {
+    try {
+      let response = await dispatch(deleteCategory(id))
+
+      if (response === 'success') {
+        MySwal.fire({
+          icon: "success",
+          text: 'Succeed delete Category'
+        })
+      }
+    } catch (err) {
+      console.log(err)
+    }
   }
+
+  useEffect(() => {
+    dispatch(getCategories())
+  }, [])
 
   return (
     <>

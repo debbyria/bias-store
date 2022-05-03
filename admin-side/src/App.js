@@ -1,5 +1,4 @@
 import './App.css';
-import CreateProduct from './views/CreateProduct';
 import TableProduct from './views/TableProduct';
 import LoginPage from './views/LoginPage';
 import RegisterPage from './views/RegisterPage';
@@ -21,7 +20,6 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<RequireAuth> <HomePage /> </RequireAuth>}>
           <Route path="/" element={<TableProduct />} />
-          <Route path="add" element={<CreateProduct />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="edit/:slug" element={<EditProduct />} />
           <Route path="categories" element={<CategoryList />} />

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { getCategories } from "../store/actions/categoryAction"
 import CategoryRow from "../components/CategoryRow"
-import CreateCategory from "./CreateCategory"
+import CreateCategory from "../components/CreateCategory"
 
 export default function CategoryList() {
   const [showModal, setShowModal] = useState(false)

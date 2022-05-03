@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addCategory } from "../store/actions/categoryAction";
+import { addCategory, getCategories } from "../store/actions/categoryAction";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 export default function CreateCategory({ showModal, setShowModal }) {
 
@@ -14,9 +18,27 @@ export default function CreateCategory({ showModal, setShowModal }) {
   const navigate = useNavigate()
 
   async function submitButton() {
-    setShowModal(false)
-    dispatch(addCategory(data))
-    navigate("/categories")
+    try {
+      setShowModal(false)
+      let response = await dispatch(addCategory(data))
+
+      if (response === 'success') {
+        MySwal.fire({
+          icon: "success",
+          text: "Succeed add new category"
+        })
+        dispatch(getCategories())
+        navigate("/categories")
+        setName('')
+      } else {
+        MySwal.fire({
+          icon: "error",
+          text: "Name is required"
+        })
+      }
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
