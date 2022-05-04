@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { addProduct, fetchProducts } from '../store/actions/productAction'
 import Swal from 'sweetalert2'
@@ -15,6 +15,8 @@ export default function CreateProduct({ showModal, setShowModal }) {
   const [categoryId, setCategory] = useState('')
   const [image1, setImage1] = useState('')
   const [image2, setImage2] = useState('')
+
+  const { categories } = useSelector((state) => state.category)
 
   const data = {
     name,
@@ -143,11 +145,9 @@ export default function CreateProduct({ showModal, setShowModal }) {
               }
               } >
               <option disabled value={""}>Select One Category</option>
-              <option value={1}>Tops</option>
-              <option value={2}>Accessories</option>
-              <option value={3}>Cheerings</option>
-              <option value={4}>Albums</option>
-              <option value={5}>Hats</option>
+              {categories.map((category) => (
+                <option key={category.id} value={category.id}>{category.name}</option>
+              ))}
             </select>
             <button className='my-2 bg-blue-500 hover:bg-blue-700 text-black py-2 px-4 rounded-full w-full' type='submit' >Add New Product</button>
             <button onClick={() => setShowModal(false)} className='bg-red-400 hover:bg-red-700 text-black  py-2 px-4 rounded-full w-full'>Cancel</button>
