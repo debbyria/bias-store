@@ -17,7 +17,7 @@ export const getDetailSuccess = (payload) => {
 export const fetchProducts = () => {
   return async (dispatch) => {
     try {
-      let response = await fetch('http://localhost:3001/public/products')
+      let response = await fetch('https://bias-store.herokuapp.com/public/products')
 
       if (!response.ok) {
         throw new Error(response.message)
@@ -34,7 +34,7 @@ export const fetchProducts = () => {
 export const getDetailProduct = (slug) => {
   return async (dispatch) => {
     try {
-      let response = await fetch(`http://localhost:3001/public/products/${slug}`)
+      let response = await fetch(`https://bias-store.herokuapp.com/public/products/${slug}`)
       let data = await response.json()
       console.log("masuk 41")
       dispatch(getDetailSuccess(data))
