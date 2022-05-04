@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function HeaderContent() {
   return (
     <div>
@@ -25,14 +27,16 @@ export default function HeaderContent() {
                 <h1 className="text-5xl md:text-6xl xl:text-7xl font-medium tracking-tight mb-12">
                   Official Merchandise Store by <br /><span className="brand-text">Bias Store</span>
                 </h1>
-                <button
-                  type="button"
-                  className="inline-block px-7 py-3 border-2 border-white text-white font-medium text-sm leading-snug uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                >
-                  Buy Now
-                </button>
+                <Link to={'/products'}>
+                  <button
+                    type="button"
+                    className="inline-block px-7 py-3 border-2 border-white text-white font-medium text-sm leading-snug uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                  >
+                    Buy Now
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

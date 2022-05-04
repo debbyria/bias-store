@@ -1,6 +1,6 @@
 export default function FooterContent() {
   return (
-    <footer className="text-center text-white" style={{ backgroundColor: "#EDAEBB" }}>
+    <footer className="mt-20 text-center text-white" style={{ backgroundColor: "#EDAEBB" }}>
       <div className="container pt-9">
         <div className="flex justify-center mb-9">
           <a href="#!" className="mr-9 text-gray-800">

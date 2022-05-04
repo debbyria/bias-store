@@ -18,11 +18,11 @@ Target:
 - [x] Mempelajari State menggunakan useState
 - [x] Mengirim Props baik berupa sebuah state atau function
 - [x] Event Handling (onClick, onChange, onSubmit)
-- [ ] Conditional Rendering di dalam React
+- [x] Conditional Rendering di dalam React
 - [x] Looping List of Data di dalam React
 - [x] Lifecycle component menggunakan useEffect
 - [x] Membuat server (json-server)
-- [ ] Membuat react app untuk client-user (Styling)
+- [x] Membuat react app untuk client-user (Styling)
 - [x] Membuat react app untuk client-admin (CRUD)
 - [x] Menentukan Thema Aplikasi
 - [x] Menentukan Design dan pemilihan CSS Framework
@@ -39,12 +39,12 @@ Hari ini saya belajar React Component. Saya memahami bagaimana cara React bekerj
 
 Target:
 
-- [ ] Lecture - Custom Hooks
-- [ ] Rules of Hooks
+- [x] Lecture - Custom Hooks
+- [x] Rules of Hooks
 - [x] Lecture - React-Router
-- [] Membuat router user-side (min: home, detail)
+- [x] Membuat router user-side (min: home, detail)
 - [x] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
-- [ ] Membuat privateRoute untuk admin
+- [x] Membuat privateRoute untuk admin
 
 **Report:**
 Hari ini saya belajar React Router. Saya mencoba membuat routes untuk menampilkan data products dan form add products. Saya hari ini juga mengganti tema saya dari movie menjadi brand.
