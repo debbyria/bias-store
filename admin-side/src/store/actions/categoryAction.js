@@ -10,7 +10,7 @@ export const getCategoriesSuccess = (payload) => {
 export const getCategories = () => {
   return async (dispatch) => {
     try {
-      let response = await fetch('http://localhost:3001/categories', {
+      let response = await fetch('https://bias-store.herokuapp.com/categories', {
         method: 'GET',
         headers: {
           access_token: localStorage.getItem("access_token")
@@ -33,7 +33,7 @@ export const getCategories = () => {
 export const deleteCategory = (id) => {
   return async (dispatch) => {
     try {
-      let response = await fetch(`http://localhost:3001/categories/${id}`, {
+      let response = await fetch(`https://bias-store.herokuapp.com/categories/${id}`, {
         method: 'DELETE',
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +56,7 @@ export const deleteCategory = (id) => {
 export const addCategory = (data) => {
   return async (dispatch) => {
     try {
-      let response = await fetch('http://localhost:3001/categories/add', {
+      let response = await fetch('https://bias-store.herokuapp.com/categories/add', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",

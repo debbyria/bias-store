@@ -17,7 +17,7 @@ export const loginUserSuccess = (payload) => {
 export const postRegisterUser = (data) => {
   return async (dispatch) => {
     try {
-      let response = await fetch('http://localhost:3001/users/register', {
+      let response = await fetch('https://bias-store.herokuapp.com/users/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export const postRegisterUser = (data) => {
 export const postLoginUser = (data) => {
   return async () => {
     try {
-      let response = await fetch('http://localhost:3001/users/login', {
+      let response = await fetch('https://bias-store.herokuapp.com/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

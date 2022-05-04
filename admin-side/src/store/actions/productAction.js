@@ -9,7 +9,7 @@ export const fetchProductsSuccess = (payload) => {
 export const fetchProducts = () => {
   return async (dispatch) => {
     try {
-      let response = await fetch('http://localhost:3001/products', {
+      let response = await fetch('https://bias-store.herokuapp.com/products', {
         method: 'GET',
         headers: {
           access_token: localStorage.getItem("access_token")
@@ -32,7 +32,7 @@ export const fetchProducts = () => {
 export const deleteProduct = (id) => {
   return async (dispatch) => {
     try {
-      let response = await fetch(`http://localhost:3001/products/${id}`, {
+      let response = await fetch(`https://bias-store.herokuapp.com/products/${id}`, {
         method: 'DELETE',
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +56,7 @@ export const deleteProduct = (id) => {
 export const addProduct = (data) => {
   return async (dispatch) => {
     try {
-      let response = await fetch('http://localhost:3001/products/add', {
+      let response = await fetch('https://bias-store.herokuapp.com/products/add', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export const getDetailSuccess = (payload) => {
 export const getDetailProduct = (slug) => {
   return async (dispatch) => {
     try {
-      let response = await fetch(`http://localhost:3001/products/${slug}`, {
+      let response = await fetch(`https://bias-store.herokuapp.com/products/${slug}`, {
         method: 'GET',
         headers: {
           "Content-Type": "application/json",
@@ -110,7 +110,7 @@ export const getDetailProduct = (slug) => {
 export const updateProduct = (id, data) => {
   return async (dispatch) => {
     try {
-      let response = await fetch(`http://localhost:3001/products/${id}`, {
+      let response = await fetch(`https://bias-store.herokuapp.com/products/${id}`, {
         method: 'PUT',
         headers: {
           "Content-Type": "application/json",
