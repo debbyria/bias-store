@@ -95,7 +95,7 @@ export default function RegisterPage() {
           />
         </div>
         <div className="flex flex-col space-y-5 w-10/12">
-          <button onClick={() => registerUser()} className="w-full rounded-3xl p-3 text-white font-bold transition duration-200">Sign Up</button>
+          <button onClick={() => registerUser()} className="w-full rounded-3xl p-3 bg-blue-400 text-white font-bold transition duration-200">Sign Up</button>
           <button className="w-full bg-red-500 rounded-3xl p-3 text-white font-bold transition duration-200">Cancel</button>
         </div>
       </div>

@@ -3,6 +3,7 @@ import TableRow from '../components/TableRow';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../store/actions/productAction";
 import CreateProduct from "../components/CreateProduct";
+import { getCategories } from "../store/actions/categoryAction";
 
 export default function TableProduct() {
   const [showModal, setShowModal] = useState(false)
@@ -13,6 +14,7 @@ export default function TableProduct() {
 
   useEffect(() => {
     dispatch(fetchProducts())
+    dispatch(getCategories())
   }, [])
 
   return (

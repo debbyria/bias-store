@@ -15,6 +15,7 @@ export default function EditProduct() {
   const [price, setPrice] = useState(detailProduct.price)
   const [mainImg, setMainImg] = useState(detailProduct.mainImg)
   const [categoryId, setCategory] = useState(detailProduct.Category.id)
+  const { categories } = useSelector((state) => state.category)
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -107,11 +108,9 @@ export default function EditProduct() {
               setCategory(value)
             }
             } >
-            <option value={1}>Tops</option>
-            <option value={2}>Accessories</option>
-            <option value={3}>Cheerings</option>
-            <option value={4}>Albums</option>
-            <option value={5}>Hats</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>{category.name}</option>
+            ))}
           </select>
           <button onClick={() => submitHandler(detailProduct.id)} className='my-2 bg-blue-500 hover:bg-blue-700 text-black py-2 px-4 rounded-full w-1/2' type='submit' >Edit Product</button>
           <br />
