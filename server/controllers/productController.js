@@ -1,7 +1,6 @@
 const { Product, Image, Category } = require('../models/index')
 const { sequelize } = require('../models/index')
 const { generateSlug } = require('../helpers/helper')
-const e = require('express')
 
 class ProductController {
   static async getAllProducts(req, res) {
@@ -93,7 +92,9 @@ class ProductController {
         },
         attributes: { exclude: ['categoryId', 'authorId', 'createdAt', 'updatedAt'] }
       })
-
+      if (!response) {
+        throw { name: 'DATA_NOT_FOUND' }
+      }
       res.status(200).json(response)
     } catch (err) {
 
@@ -156,7 +157,7 @@ class ProductController {
         }
       })
 
-      res.status(201).json(`Product ${name} has been updated`)
+      res.status(200).json(`Product ${name} has been updated`)
     } catch (err) {
       if (err.name === 'SequelizeValidationError') {
         res.status(400).json(err.errors[0].message)
