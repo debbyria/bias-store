@@ -1,92 +1,55 @@
-# P3-Challenge-1
+# Bias Store
+> Bias Store is a web-based application consisting of a simple e-commerce platform. Within this repository, there are client-side, server-side, and admin-side components. Bias Store offers products related to K-pop. In the Admin side, users can upload products they want to showcase or offer on the client side.
 
-- Tema Aplikasi: Brand Showcase
-- CSS Framework: Tailwind
+## Tech Stack
+### Server Side
+- Express JS
+- Node JS
+- PostgreSQL
+- Sequelize
+- JsonWebToken
+- Bcryptjs
 
-Struktur Folder:
+### Cliet Side
+- React JS
+- Redux
+- Fontawesome
+- Tailwind
+- Jest & Supertest
 
-- server (PORT: 3000)
-- client-user
-- client-admin
+### Admin Side
+- React JS
+- Redux
+- SweetAlert
+- Tailwind
+- Jest & Supertest
 
-## W1D1
+## Project Setup
+### Server Side
+```sh
+- cd server
+- npm install
+- npx sequelize-cli db:create
+- npx sequelize-cli db:migrate
+- npx sequelize-cli db:seed:all
+- nodemon app.js
+```
 
-Target:
+### Client Side
+```sh
+- cd ..
+- cd client-side
+- npm install
+- npm run start
+```
 
-- [x] Lecture - React Intro
-- [x] React: Class Component vs Function Component
-- [x] Mempelajari State menggunakan useState
-- [x] Mengirim Props baik berupa sebuah state atau function
-- [x] Event Handling (onClick, onChange, onSubmit)
-- [x] Conditional Rendering di dalam React
-- [x] Looping List of Data di dalam React
-- [x] Lifecycle component menggunakan useEffect
-- [x] Membuat server (json-server)
-- [x] Membuat react app untuk client-user (Styling)
-- [x] Membuat react app untuk client-admin (CRUD)
-- [x] Menentukan Thema Aplikasi
-- [x] Menentukan Design dan pemilihan CSS Framework
+### Admin Side
+```sh
+- cd ..
+- cd admin-side
+- npm install
+- npm run start
+```
 
-**Report:**
-
-...
-Hari ini saya belajar React Component. Saya memahami bagaimana cara React bekerja. Pada tugas ini saya memilik Tema Brans Showcase dan saya akan menggunakan CSS Framework yaitu Tailwind CSS
-
-> contoh: Hari ini saya belajar React Component. Saya memahami bagaimana cara React bekerja. Lifecycle yang sudah saya coba adalah componentDidMount yang digunakan untuk fetch data dst. Namun saya belum mencoba menggunakan onSubmit dikarenakan data yang didapat belum sesuai.
-> Pada tugas ini, saya memilih Tema A dengan mengambil referensi dari B. Saya juga akan menggunakan CSS Framework yaitu Tailwind CSS
-
-## W1D2
-
-Target:
-
-- [x] Lecture - Custom Hooks
-- [x] Rules of Hooks
-- [x] Lecture - React-Router
-- [x] Membuat router user-side (min: home, detail)
-- [x] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
-- [x] Membuat privateRoute untuk admin
-
-**Report:**
-Hari ini saya belajar React Router. Saya mencoba membuat routes untuk menampilkan data products dan form add products. Saya hari ini juga mengganti tema saya dari movie menjadi brand.
-
-## W1D3
-
-Target:
-
-- [x] Lecture - Redux
-- [x] State vs Global State
-- [x] Bagaimana cara membuat Store
-- [x] Bagaimana cara membuat Reducer
-- [x] Bagaimana cara membuat Action
-- [x] Membuat Action Creators
-- [x] Membuat Action Types
-- [x] Lecture - Redux-thunk (handle async)
-- [x] Cara menggunakan combineReducers
-
-**Report:**
-Hari ini saya belajar megaplikasikan react redux dan middleware. Walaupun saya masih bingung, saya sudah mencoba untuk mengaplikasikan fetching data dengan actions dan berhasil sihh. Tapi susah banget yaaaa :"(. Tapi bisa sih dipelajari. Tapi susahh kak. Oke semangatt yukk
-
-## W1D4
-
-Target:
-
-- [x] Lecture - SQL Advance DQL
-- [x] Membuat server mengguanakan express.js, postgreSQL dan Sequelize
-- [x] Menentukan associations antar tables
-- [x] Lecture - SQL Transaction
-- [x] Membuat transaction saat membuat entitas baru pada main table. Pastikan ada assosiasi di dalamnya
-
-**Report:**
-
-...
-
-## W1D5
-
-Target:
-
-- [ ] LC Simulation
-- [ ] Practice, Practice, Practice
-
-**Report:**
-
-...
+## Notes
+> You can be admin by add admin role in admin page (login as debby, can see dummy data on https://github.com/debbyria/bias-store/blob/master/server/dummy/user.json)
