@@ -27,6 +27,7 @@
 ## Project Setup
 ### Server Side
 ```sh
+- cd server
 - npm install
 - npx sequelize-cli db:create
 - npx sequelize-cli db:migrate
@@ -36,12 +37,16 @@
 
 ### Client Side
 ```sh
+- cd ..
+- cd client-side
 - npm install
 - npm run start
 ```
 
 ### Admin Side
 ```sh
+- cd ..
+- cd admin-side
 - npm install
 - npm run start
 ```
